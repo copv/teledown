@@ -22,11 +22,11 @@ def shorten_filename(filename, limit=50):
         return filename[:int(limit / 2) - 3] + '...' + filename[len(filename) - int(limit / 2):]
 
 
-def print_all_channel(client: TelegramClient):
+async def print_all_channel(client: TelegramClient):
     Ids = []
     Names = []
     # Types = []
-    for d in client.iter_dialogs():
+    async for d in client.iter_dialogs():
         if not isinstance(d.entity, types.Channel):
             continue
         Ids.append(d.entity.id)

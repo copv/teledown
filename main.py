@@ -136,7 +136,7 @@ async def handle_refresh(client: TelegramClient, args):
     """
     刷新缓存，打印所有频道信息
     """
-    print_all_channel(client)
+    await print_all_channel(client)
 
 async def handle_hook(client: TelegramClient, args):
     """
